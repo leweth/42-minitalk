@@ -1,13 +1,19 @@
-#include "./libft/libft.h"
-#include "./printf/ft_printf.h"
+#include "lib/libft/libft.h"
 
+void	signal_handler(int sigint)
+{
+	if (sigint == SIGUSR1)
+		ft_printf("Message Successfully received!\n");
+	exit(SUCCESS);
+}
 
 int	main(int argc, char **argv)
 {
 	pid_t	pid;
-	size_t	len;
+	int		len;
 	int		err;
 
+	signal(SIGUSR1, signal_handler);
 	err = SUCCESS;
 	if (argc != 3)
 	{
@@ -18,12 +24,13 @@ int	main(int argc, char **argv)
 	if (pid <= 0)
 		ft_printf("Invalid process ID!");
 	len = ft_strlen(argv[2]);
-	// ft_printf("--- %d ---\n", len);
 	err = send_data(&len, sizeof(size_t), pid);
 	if (err)
 		return (ft_printf("Exit Failure."), FAILURE);
 	send_data(argv[2], len, pid);
 	if (err)
 		return (ft_printf("Exit Failure."), FAILURE);
+	while (true)
+		pause();
 	return (SUCCESS);
 }

@@ -5,9 +5,9 @@ CFLAGS = -Wall -Wextra -Werror
 NAME = minitalk 
 
 
-PRINTF = ./printf/libftprintf.a
+PRINTF = ./lib/printf/libftprintf.a
 
-LIBFT = ./libft/libft.a
+LIBFT = ./lib/libft/libft.a
 
 
 
@@ -24,21 +24,21 @@ server:
 
 
 ${LIBFT}:
-	cd libft && ${MAKE} && cp libft.a ../
+	cd lib/libft && ${MAKE} && cp libft.a ../../
 
 
 ${PRINTF}:
-	cd printf && $(MAKE) && cp libftprintf.a ../
+	cd lib/printf && $(MAKE) && cp libftprintf.a ../../
 
 
 clean:
-	cd printf && ${MAKE} clean && 
-	cd libft && ${MAKE} clean && 
+	cd lib/printf && ${MAKE} clean && 
+	cd lib/libft && ${MAKE} clean && 
 
 
 fclean:
-	cd printf ; ${MAKE} fclean
-	cd libft ; ${MAKE} fclean
+	cd lib/printf ; ${MAKE} fclean
+	cd lib/libft ; ${MAKE} fclean
 	rm client server
 	rm *.a
 
