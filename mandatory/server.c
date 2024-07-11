@@ -6,7 +6,7 @@
 /*   By: mben-yah <mben-yah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 12:01:54 by mben-yah          #+#    #+#             */
-/*   Updated: 2024/07/11 12:10:54 by mben-yah         ###   ########.fr       */
+/*   Updated: 2024/07/11 15:52:07 by mben-yah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void	signal_handler(int sigint, siginfo_t *sig_info, void *param)
 			receive_byte(sigint, g_data.string);
 		}
 	}
-	if ((g_data.received_bits >= 65) 
+	if ((g_data.received_bits >= 65)
 		&& (g_data.received_bits == 8 * ((size_t)g_data.len + 8)))
 	{
 		ft_printf("%s", g_data.string);

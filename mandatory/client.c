@@ -6,7 +6,7 @@
 /*   By: mben-yah <mben-yah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 12:00:38 by mben-yah          #+#    #+#             */
-/*   Updated: 2024/07/11 12:01:36 by mben-yah         ###   ########.fr       */
+/*   Updated: 2024/07/11 16:23:43 by mben-yah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	main(int argc, char **argv)
 	if (argc != 3)
 	{
 		ft_printf("Invalid number of arguments! \
-				You must include the server's pid and the string to send.");
+You must include the server's pid and the string to send.");
 		return (FAILURE);
 	}
 	pid = ft_atoi(argv[1]);
